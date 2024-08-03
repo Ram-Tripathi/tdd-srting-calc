@@ -21,4 +21,8 @@ describe("String Calculator", () => {
   it("should return the sum of numbers separated by new lines", () => {
     expect(add("1\n2,3")).to.equal(6);
   });
+
+  it("should handle custom delimiters", () => {
+    expect(add("//;\n1;2")).to.equal(3);
+  });
 });

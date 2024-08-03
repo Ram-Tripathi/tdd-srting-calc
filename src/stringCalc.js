@@ -3,9 +3,16 @@ function add(str) {
     return 0;
   }
 
-  const normalizedStr = str.replace(/\n/g, ",");
-  const numbers = normalizedStr.split(",").map(Number);
+  let delimiter = /,|\n/;
+  let numbersStr = str;
 
+  if (str.startsWith("//")) {
+    const delimiterEndIndex = str.indexOf("\n");
+    delimiter = new RegExp(str.substring(2, delimiterEndIndex));
+    numbersStr = str.substring(delimiterEndIndex + 1);
+  }
+
+  const numbers = numbersStr.split(delimiter).map(Number);
   return numbers.reduce((sum, num) => sum + num, 0);
 }
 
