@@ -3,7 +3,9 @@ function add(str) {
     return 0;
   }
 
-  const numbers = str.split(",").map(Number);
+  const normalizedStr = str.replace(/\n/g, ",");
+  const numbers = normalizedStr.split(",").map(Number);
+
   return numbers.reduce((sum, num) => sum + num, 0);
 }
 

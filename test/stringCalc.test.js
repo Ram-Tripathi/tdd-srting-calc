@@ -13,4 +13,12 @@ describe("String Calculator", () => {
   it("should return the sum of two comma-separated numbers", () => {
     expect(add("1,5")).to.equal(6);
   });
+
+  it("should return the sum of multiple comma-separated numbers", () => {
+    expect(add("1,2,3,4")).to.equal(10);
+  });
+
+  it("should return the sum of numbers separated by new lines", () => {
+    expect(add("1\n2,3")).to.equal(6);
+  });
 });
