@@ -21,7 +21,9 @@ function add(str) {
     );
   }
 
-  return numbers.reduce((sum, num) => sum + num, 0);
+  return numbers
+    .filter((num) => num <= 1000)
+    .reduce((sum, num) => sum + num, 0);
 }
 
 export default add;
