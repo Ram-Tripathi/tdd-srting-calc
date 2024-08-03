@@ -13,6 +13,14 @@ function add(str) {
   }
 
   const numbers = numbersStr.split(delimiter).map(Number);
+
+  const negativeNumbers = numbers.filter((num) => num < 0);
+  if (negativeNumbers.length > 0) {
+    throw new Error(
+      `negative numbers not allowed ${negativeNumbers.join(",")}`
+    );
+  }
+
   return numbers.reduce((sum, num) => sum + num, 0);
 }
 
