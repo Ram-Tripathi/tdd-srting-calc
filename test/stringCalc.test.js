@@ -29,4 +29,8 @@ describe("String Calculator", () => {
   it("should throw an exception for a single negative number", () => {
     expect(() => add("1,-2,3")).to.throw("negative numbers not allowed -2");
   });
+
+  it("should throw an exception for multiple negative numbers", () => {
+    expect(() => add("1,-2,-3")).to.throw("negative numbers not allowed -2,-3");
+  });
 });
